@@ -1,0 +1,1570 @@
+{
+	"packs": [{
+		"templates": {
+			"1": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "GochiHand-Regular",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "GochiHand-Regular",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "1.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "1_thum.png",
+				"name": "1",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.35,
+						"originX": 0.32,
+						"height": 0.07,
+						"width": 0.38,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "GochiHand-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "1.jpg",
+					"messageSettings": {
+						"font": "Allura-Regular",
+						"appendSpeaker": false,
+						"originY": 0.14,
+						"originX": 0.1,
+						"height": 0.19,
+						"width": 0.81,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 1
+					}
+				}
+			},
+			"10": {
+				"isDialog": true,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.5,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.05,
+						"photoOriginY": 0.045,
+						"photoHeight": 0.416,
+						"photoWidth": 0.43
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 1,
+						"photoOriginX": 0.53,
+						"photoOriginY": 0.045,
+						"photoHeight": 0.416,
+						"photoWidth": 0.43
+					}],
+					"headerOffset": 0.3,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "a1a3a6",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 18,
+							"appendAge": false,
+							"font": "Alike-Regular",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "a1a3a6",
+							"appendSpeaker": true,
+							"originY": 0.029,
+							"originX": 0.046,
+							"height": 0.13,
+							"width": 0.92,
+							"New item": "",
+							"fontSize": 18,
+							"font": "Alike-Regular",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 1,
+							"zPlacement": 0,
+							"photoOriginX": 0.025,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.15,
+							"photoWidth": 0.15
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "10.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "a1a3a6",
+							"originY": 0.029,
+							"originX": 0.046,
+							"height": 0.11,
+							"width": 0.92,
+							"fontSize": 18,
+							"appendAge": false,
+							"font": "Alike-Regular",
+							"alignment": 0
+						},
+						"messageSettings": {
+							"font": "Alike-Regular",
+							"appendSpeaker": true,
+							"originY": 0.029,
+							"originX": 0.046,
+							"height": 0.13,
+							"width": 0.92,
+							"fontSize": 18,
+							"textColor": "a1a3a6",
+							"alignment": 0
+						},
+						"backgroundImage": "10.jpg",
+						"chatHeadPhotoArea": {
+							"shapeType": 1,
+							"zPlacement": 0,
+							"photoOriginX": 0.025,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.15,
+							"photoWidth": 0.15
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "10_thum.png",
+				"name": "10",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 2,
+						"photoOriginX": 0.5183,
+						"photoOriginY": 0.5159,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 1,
+						"photoOriginX": 0.5183,
+						"photoOriginY": 0.0375,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.0428,
+						"photoOriginY": 0.0375,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					}],
+					"isPhotoAllowed": true,
+					"speakerSettings": {
+						"textColor": "ffffff",
+						"originY": 0.88,
+						"originX": 0.06,
+						"height": 0.07,
+						"width": 0.4,
+						"fontSize": 14,
+						"appendAge": true,
+						"font": "SourceSansPro-Semibold",
+						"alignment": 1
+					},
+					"backgroundImage": "1.gif",
+					"messageSettings": {
+						"font": "SourceSansPro-Semibold",
+						"appendSpeaker": false,
+						"originY": 0.56,
+						"originX": 0.06,
+						"height": 0.3,
+						"width": 0.41,
+						"fontSize": 18,
+						"textColor": "ffffff",
+						"alignment": 1
+					}
+				}
+			},
+			"6": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "6.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "6_thum.png",
+				"name": "6",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.72,
+						"originX": 0.35,
+						"height": 0.08,
+						"width": 0.45,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 0
+					},
+					"backgroundImage": "6.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.23,
+						"originX": 0.38,
+						"height": 0.46,
+						"width": 0.47,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 0
+					}
+				}
+			},
+			"9": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "9.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "1.png",
+				"name": "205_storybook_charm_teapot",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.71,
+						"originX": 0.26,
+						"height": 0.08,
+						"width": 0.46,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "1.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.5,
+						"originX": 0.09,
+						"height": 0.19,
+						"width": 0.84,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 1
+					}
+				}
+			},
+			"3": {
+				"isDialog": true,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.55,
+					"isPhotoAllowed": true,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.0,
+						"photoOriginY": 0.0,
+						"photoHeight": 0.54,
+						"photoWidth": 1.0
+					}],
+					"headerOffset": 0.55,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 18,
+							"appendAge": false,
+							"font": "Alike-Regular",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.2,
+							"height": 0.13,
+							"width": 0.74,
+							"New item": "",
+							"fontSize": 18,
+							"font": "Alike-Regular",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 1,
+							"zPlacement": 0,
+							"photoOriginX": 0.025,
+							"photoOriginY": 0.01,
+							"photoHeight": 0.15,
+							"photoWidth": 0.15
+						},
+						"chatHead": true
+					},
+					"backgroundImage": "3.gif",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 18,
+							"appendAge": false,
+							"font": "Alike-Regular",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "Alike-Regular",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.2,
+							"height": 0.13,
+							"width": 0.74,
+							"fontSize": 18,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 1,
+							"zPlacement": 0,
+							"photoOriginX": 0.025,
+							"photoOriginY": 0.01,
+							"photoHeight": 0.15,
+							"photoWidth": 0.15
+						},
+						"chatHead": true
+					}
+				},
+				"preview": "3_thum.png",
+				"name": "3",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 2,
+						"photoOriginX": 0.5183,
+						"photoOriginY": 0.5159,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 1,
+						"photoOriginX": 0.5183,
+						"photoOriginY": 0.0375,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.0428,
+						"photoOriginY": 0.0375,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					}],
+					"isPhotoAllowed": true,
+					"speakerSettings": {
+						"textColor": "ffffff",
+						"originY": 0.88,
+						"originX": 0.06,
+						"height": 0.07,
+						"width": 0.4,
+						"fontSize": 14,
+						"appendAge": true,
+						"font": "SourceSansPro-Semibold",
+						"alignment": 1
+					},
+					"backgroundImage": "1.gif",
+					"messageSettings": {
+						"font": "SourceSansPro-Semibold",
+						"appendSpeaker": false,
+						"originY": 0.56,
+						"originX": 0.06,
+						"height": 0.3,
+						"width": 0.41,
+						"fontSize": 18,
+						"textColor": "ffffff",
+						"alignment": 1
+					}
+				}
+			},
+			"2": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "2.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "2_thum.png",
+				"name": "2",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.67,
+						"originX": 0.27,
+						"height": 0.08,
+						"width": 0.38,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "2.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.31,
+						"originX": 0.16,
+						"height": 0.31,
+						"width": 0.68,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 1
+					}
+				}
+			},
+			"5": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "3.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "5_thum.png",
+				"name": "5",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "57b0b4",
+						"originY": 0.71,
+						"originX": 0.26,
+						"height": 0.08,
+						"width": 0.46,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "5.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.5,
+						"originX": 0.09,
+						"height": 0.19,
+						"width": 0.84,
+						"fontSize": 22,
+						"textColor": "57b0b4",
+						"alignment": 1
+					}
+				}
+			},
+			"4": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "3.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "4_thum.png",
+				"name": "4",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0.55,
+						"photoHeight": 0.45,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.42,
+						"originX": 0.28,
+						"height": 0.08,
+						"width": 0.41,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "4.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.21,
+						"originX": 0.08,
+						"height": 0.21,
+						"width": 0.83,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 1
+					}
+				}
+			},
+			"7": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "4.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "7_thum.png",
+				"name": "7",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.67,
+						"originX": 0.28,
+						"height": 0.08,
+						"width": 0.44,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "7.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.4,
+						"originX": 0.08,
+						"height": 0.21,
+						"width": 0.82,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 1
+					}
+				}
+			},
+			"8": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "4.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "8_thum.png",
+				"name": "8",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 1,
+						"photoOriginX": 0.0,
+						"photoOriginY": 0.49,
+						"photoHeight": 0.51,
+						"photoWidth": 0.62
+					}],
+					"isPhotoAllowed": true,
+					"speakerSettings": {
+						"textColor": "a1a3a6",
+						"originY": 0.37,
+						"originX": 0.29,
+						"height": 0.07,
+						"width": 0.38,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "8.gif",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.15,
+						"originX": 0.1,
+						"height": 0.19,
+						"width": 0.82,
+						"fontSize": 22,
+						"textColor": "a1a3a6",
+						"alignment": 1
+					}
+				}
+			},
+			"11": {
+				"isDialog": true,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.4309,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 1,
+						"zPlacement": 2,
+						"photoOriginX": 0.607,
+						"photoOriginY": 0.0539,
+						"photoHeight": 0.3374,
+						"photoWidth": 0.3374
+					},
+					{
+						"shapeType": 1,
+						"zPlacement": 1,
+						"photoOriginX": 0.0456,
+						"photoOriginY": 0.0539,
+						"photoHeight": 0.3374,
+						"photoWidth": 0.3374
+					},
+					{
+						"shapeType": 1,
+						"zPlacement": 0,
+						"photoOriginX": 0.3263,
+						"photoOriginY": 0.0539,
+						"photoHeight": 0.3374,
+						"photoWidth": 0.3374
+					}],
+					"headerOffset": 0.28,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "a1a3a6",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 18,
+							"appendAge": false,
+							"font": "Alike-Regular",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "a1a3a6",
+							"appendSpeaker": true,
+							"originY": 0.029,
+							"originX": 0.046,
+							"height": 0.13,
+							"width": 0.92,
+							"New item": "",
+							"fontSize": 18,
+							"font": "Alike-Regular",
+							"alignment": 0
+						},
+						"backgroundImage": "11.jpg",
+						"chatHeadPhotoArea": {
+							"shapeType": 1,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.15,
+							"photoWidth": 0.15
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "11.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "a1a3a6",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 18,
+							"appendAge": false,
+							"font": "Alike-Regular",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "Alike-Regular",
+							"appendSpeaker": true,
+							"originY": 0.029,
+							"originX": 0.046,
+							"height": 0.13,
+							"width": 0.92,
+							"fontSize": 18,
+							"textColor": "a1a3a6",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 1,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.15,
+							"photoWidth": 0.15
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "11.jpg",
+				"name": "11",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 2,
+						"photoOriginX": 0.5183,
+						"photoOriginY": 0.5159,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 1,
+						"photoOriginX": 0.5183,
+						"photoOriginY": 0.0375,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					},
+					{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.0428,
+						"photoOriginY": 0.0375,
+						"photoHeight": 0.4473,
+						"photoWidth": 0.4452
+					}],
+					"isPhotoAllowed": true,
+					"speakerSettings": {
+						"textColor": "ffffff",
+						"originY": 0.88,
+						"originX": 0.06,
+						"height": 0.07,
+						"width": 0.4,
+						"fontSize": 14,
+						"appendAge": true,
+						"font": "SourceSansPro-Semibold",
+						"alignment": 1
+					},
+					"backgroundImage": "11.gif",
+					"messageSettings": {
+						"font": "SourceSansPro-Semibold",
+						"appendSpeaker": false,
+						"originY": 0.56,
+						"originX": 0.06,
+						"height": 0.3,
+						"width": 0.41,
+						"fontSize": 18,
+						"textColor": "ffffff",
+						"alignment": 1
+					}
+				}
+			},
+			"205_storybook_charm_sm_balloon": {
+				"isDialog": false,
+				"dialogTileSettings": {
+					"backgroundStretchRow": 0.61,
+					"isPhotoAllowed": false,
+					"photos": [{
+						"shapeType": 2,
+						"zPlacement": 0,
+						"photoOriginX": 0.042,
+						"photoOriginY": 0.036,
+						"photoHeight": 0.444,
+						"photoWidth": 0.92
+					}],
+					"headerOffset": 0.603,
+					"primarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.03,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"textColor": "ffffff",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"New item": "",
+							"fontSize": 22,
+							"font": "JosefinSlab-Bold",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					},
+					"backgroundImage": "7.jpg",
+					"secondarySpeakerCell": {
+						"backgroundStretchRow": 0.112,
+						"speakerSettings": {
+							"textColor": "FFFFFF",
+							"originY": 0.11,
+							"originX": 0.84,
+							"height": 0.11,
+							"width": 0.14,
+							"fontSize": 22,
+							"appendAge": false,
+							"font": "Lobster",
+							"alignment": 1
+						},
+						"messageSettings": {
+							"font": "JosefinSlab-Bold",
+							"appendSpeaker": true,
+							"originY": 0.02,
+							"originX": 0.1,
+							"height": 0.13,
+							"width": 0.8,
+							"fontSize": 22,
+							"textColor": "ffffff",
+							"alignment": 0
+						},
+						"backgroundImage": "",
+						"chatHeadPhotoArea": {
+							"shapeType": 2,
+							"zPlacement": 0,
+							"photoOriginX": 0.04,
+							"photoOriginY": 0.02,
+							"photoHeight": 0.0163,
+							"photoWidth": 0.0163
+						},
+						"chatHead": false
+					}
+				},
+				"preview": "6.png",
+				"name": "205_storybook_charm_sm_balloon",
+				"quoteTileSettings": {
+					"photos": [{
+						"shapeType": 0,
+						"zPlacement": 0,
+						"photoOriginX": 0,
+						"photoOriginY": 0,
+						"photoHeight": 1,
+						"photoWidth": 1
+					}],
+					"isPhotoAllowed": false,
+					"speakerSettings": {
+						"textColor": "57b0b4",
+						"originY": 0.74,
+						"originX": 0.3,
+						"height": 0.07,
+						"width": 0.39,
+						"fontSize": 16,
+						"appendAge": true,
+						"font": "Alike-Regular",
+						"alignment": 1
+					},
+					"backgroundImage": "9.jpg",
+					"messageSettings": {
+						"font": "Alike-Regular",
+						"appendSpeaker": false,
+						"originY": 0.53,
+						"originX": 0.1,
+						"height": 0.21,
+						"width": 0.8,
+						"fontSize": 22,
+						"textColor": "57b0b4",
+						"alignment": 1
+					}
+				}
+			}
+		},
+		"pack_id": "5",
+		"version": 0.04,
+		"name": "5",
+		"icon": "4.png"
+	}]
+}

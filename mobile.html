@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kitchensink">
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/paster.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+    <script>
+        (function() {
+            var fabricUrl = 'lib/fabric.js';
+            if (document.location.search.indexOf('load_fabric_from=') > -1) {
+                var match = document.location.search.match(/load_fabric_from=([^&]*)/);
+                if (match && match[1]) {
+                    fabricUrl = match[1];
+                }
+            }
+            document.write('<script src="' + fabricUrl + '"><\/script>');
+        })();
+    </script>
+    <!--     <script>
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('canvasid');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+    </script> -->
+    <script src="js/modernizr-custom.js"></script>
+    <script src="js/master.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="js/webcam.js"></script>
+    <!--     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/prism.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kitchensink.css">
+    <link rel="stylesheet" href="css/material_design_colors_full.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/customfont.css">
+    <link href='https://fonts.googleapis.com/css?family=Plaster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+    <style>
+        .canvasclass {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #main {
+            display: block;
+            width: 80%;
+            padding: 50px 10%;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body onload="IsTouchSupported()">
+    <div class="jumbotron text-center">
+        <h1>Image editing</h1>
+    </div>
+    <div id="divCheckbox">
+        <!-- Div just to load the custom font for the canvas, this is there to make sure that fonts have loaded. 
+            http://stackoverflow.com/a/2756611
+            Description :
+            Drawing on canvas has to happen and return immediately when you call the fillText method. However, the browser has not yet loaded the font from the network, which is a background task. So it has to fall back to the font it does have available.
+    -->
+        <p>
+            <font style="font-family: GochiHand-Regular;" color="white">hidden</font>
+            <font style="font-family: Alike-Regular;" color="white">hidden</font>
+            <font style="font-family: Allura-Regular;" color="white">hidden</font>
+            <font style="font-family: ConcertOne-Regular;" color="white">hidden</font>
+            <font style="font-family: Corben-Regular;" color="white">hidden</font>
+            <font style="font-family: DancingScript;" color="white">hidden</font>
+            <font style="font-family: EricSansA;" color="white">hidden</font>
+            <font style="font-family: Gorditas-Regular;" color="white">hidden</font>
+            <font style="font-family: Graduate-Regular;" color="white">hidden</font>
+            <font style="font-family: JosefinSlab-Bold;" color="white">hidden</font>
+            <font style="font-family: JustMeAgainDownHere;" color="white">hidden</font>
+            <font style="font-family: KGTenThousandReasons;" color="white">hidden</font>
+            <font style="font-family: Lobster;" color="white">hidden</font>
+            <font style="font-family: Lusitana-Regular;" color="white">hidden</font>
+            <font style="font-family: Monofett;" color="white">hidden</font>
+            <font style="font-family: PatrickHand-Regular;" color="white">hidden</font>
+            <font style="font-family: PermanentMarker;" color="white">hidden</font>
+            <font style="font-family: PlayfairDisplaySC-Regular;" color="white">hidden</font>
+            <font style="font-family: Pompiere-Regular;" color="white">hidden</font>
+            <font style="font-family: Sniglet-Regular;" color="white">hidden</font>
+            <font style="font-family: SourceSansPro-Regular;" color="white">hidden</font>
+            <font style="font-family: SpecialElite;" color="white">hidden</font>
+            <font style="font-family: SueEllenFrancisco;" color="white">hidden</font>
+            <font style="font-family: TextMeOne-Regular;" color="white">hidden</font>
+            <font style="font-family: VastShadow-Regular;" color="white">hidden</font>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row-fluid">
+            <div id="bd-wrapper" ng-controller="CanvasControls">
+                <div id="canvas-wrapper">
+                    <div class="col-md-12 text-center">
+                        <div class="row-fluid">
+                            <div id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+        <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Pack #1
+        </a>-->
+        <a data-toggle="collapse" data-target="#collapseOne">Pack #1</a>
+      </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '1.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/1_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '2.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/2_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '3.gif', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/3_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '4.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/4_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '5.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/5_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '6.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/6_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '7.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/7_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '8.gif', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/8_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '9.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/9_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '10.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/10_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-2">
+                                                <a ng-click="addPackImageAsCanvasBackground('pack1', '11.jpg', 'pack1.json')" class="thumbnail">
+                                                    <img src="assets/templates/pack1/11_thum.png" alt="...">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Empy row -->
+                        </div>
+                        <button class="btn btn-danger clear" ng-click="confirmClear()">Clear canvas</button>
+                        <button class="btn btn-object-action" id="remove-selected" ng-click="removeSelected()">
+                            Remove selected object
+                        </button>
+                        </br>
+                        </br>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <canvas id="canvas" height="300px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Test filters -->
+                    <div class="filters">
+                        <input type="checkbox" data-filter="0">Grayscale
+                        <input type="checkbox" data-filter="1">Sepia
+                        <input type="checkbox" data-filter="2">Invert
+                        <input type="checkbox" data-filter="3">Emboss
+                        <input type="checkbox" data-filter="4">Sharpen
+                    </div>
+                    <!-- Test filters -->
+                    <div class="row text-center">
+                        <div ng-show="getText()">
+                            <div class="container">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <textarea bind-value-to="text" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
+                            <div class="col-xs-6 col-md-2">
+                            </div>
+                            <div class="col-xs-6 col-md-2">
+                            </div>
+                            <!--                         <div class="col-xs-6 col-md-2">
+                                <label for="text-stroke-color">Stroke color:</label>
+                                <input type="color" value="" id="text-stroke-color" class="btn-object-action" bind-value-to="fill">
+                            </div> -->
+                            <div class="col-xs-6 col-md-2">
+                                <label for="text-font-size">Font size:</label>
+                                <input type="range" value="" min="1" max="120" step="1" id="text-font-size" class="btn-object-action" bind-value-to="fontSize">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                    </div>
+                    <div ng-show="getText()">
+                        <div class="col-sm-12 text-center">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('GochiHand-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_gochi.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Alike-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_alike.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Allura-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_allura.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('ConcertOne-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_concertone.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Corben-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_corben.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('DancingScript')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_dancingScript.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('EricSansA')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_ericSansA.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Gorditas-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_gorditas.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Graduate-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_graduate.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('JosefinSlab-Bold')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_josefinslab.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('JustMeAgainDownHere')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_justmeagaindownhere.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('KGTenThousandReasons')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_KGTenThousandReasons.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Lobster')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_lobster.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Lusitana-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_lusitana.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Monofett')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_monofett.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('PatrickHand-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_patrickhand.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('PermanentMarker')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_permanentmarker.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('PlayfairDisplaySC-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_playfairDisplaySC.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Pompiere-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_pompiere.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Roboto-Bold')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_roboto.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('Sniglet-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_sniglet.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('SourceSansPro-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_sourcesanspro.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('SpecialElite')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_specialElite.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('SueEllenFrancisco')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_sueEllenFrancisco.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('TextMeOne-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_textmeone.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a ng-click="setFontFamily('VastShadow-Regular')" class="thumbnail">
+                                        <img src="assets/Fontimages/font_vastShadow.png" alt="...">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="text-wrapper" style="margin-top: 10px" ng-show="getText()">
+                            <div class="col-sm-12 text-center">
+                                <div class="row">
+                                    <!-- http://www.bootply.com/rOinjr3Ufn# -->
+                                    <div class="col-md-1">
+                                        <div class="well color1" ng-click="setFill('#000000')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color2" ng-click="setFill('#868585')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color3" ng-click="setFill('#ffffff')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color4" ng-click="setFill('#603913')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color5" ng-click="setFill('#a67c52')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color6" ng-click="setFill('#c7b29a')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color7" ng-click="setFill('#9e0b0f')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color8" ng-click="setFill('#ee1c24')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color9" ng-click="setFill('#f36c4f')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color10" ng-click="setFill('#dd5f32')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color11" ng-click="setFill('#f8941d')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color12" ng-click="setFill('#f6b47b')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="well color13" ng-click="setFill('#ffca00')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color14" ng-click="setFill('#fff200')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color15" ng-click="setFill('#fff899')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color16" ng-click="setFill('#005826')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color17" ng-click="setFill('#39b54a')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color18" ng-click="setFill('#acd473')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color19" ng-click="setFill('#009d97')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color20" ng-click="setFill('#78c0a8')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color21" ng-click="setFill('#b5dac6')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color22" ng-click="setFill('#004a80')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well color23" ng-click="setFill('#448ccb')">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="well lime-24" ng-click="setFill('#448ccb')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                            <!--/col-12-->
+                        </div>
+                    </div>
+                    <!--/row-->
+                    <div class="col-md-12 text-center">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="mini-box">
+                                    <button class="btn" ng-click="addText()">Add text</button>
+                                    <button type="button" class="btn image1" ng-click="addImageFromCanvas()">Add clicked image</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="mini-box">
+                                    <button class="btn btn-success" id="rasterize" ng-click="rasterize()">
+                                        Export to Image
+                                    </button>
+                                </div>
+                            </div>
+                            <!--                         <div class="col-xs-6">
+                            <div class="mini-box">
+
+                                <textarea id="json-console" bind-value-to="consoleJSON" style="display:none;"> </textarea>
+                                <button type="button" class="btn btn-info" ng-click="loadJSON()">
+                                    Load
+                                </button>
+                                <button type="button" class="btn btn-info" ng-click="saveJSON()">
+                                    Save
+                                </button>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                    </br>
+                    <div class="col-md-12 text-center" id="forDesktop" style="display: none">
+                        <button class="btn fa fa-play" id="imageClick" onclick="setupCamera()">
+                            Start Camera
+                        </button>
+                        <button class="btn fa fa-camera" id="imageClick" onclick="take_snapshot()">
+                            Click photo
+                        </button>
+                        <button class="btn fa fa-stop" id="imageClick" onclick="stopCamera()">
+                            Stop Camera
+                        </button>
+                    </div>
+                    <div class="col-md-12 text-center" id="formobile" style="display: none">
+                        <input type="file" accept="image/*" onchange="loadFile(event)">
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="row">
+                            <div class="col-xs-6 text-center">
+                                <div class="mini-box">
+                                    <div id="my_camera" style="width:320px; height:240px;"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 text-center">
+                                <div class="mini-box">
+                                    <canvas id="canvasid" width="320" height="240"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script language="JavaScript">
+                        function take_snapshot() {
+                            Webcam.snap(function(data_uri) {
+                                //document.getElementById('my_result').innerHTML = '<img id="mypic" src="' + data_uri + '"/>';
+
+                                var canvasphoto = document.getElementById('canvasid'),
+                                    context = canvasphoto.getContext('2d');
+                                context.clearRect(0, 0, canvasphoto.width, canvasphoto.height);
+                                make_base();
+
+                                function make_base() {
+                                    base_image = new Image();
+                                    base_image.src = data_uri;
+                                    base_image.onload = function() {
+                                        context.drawImage(base_image, 1, 1);
+                                    }
+                                }
+
+                            });
+                        }
+
+                        function setupCamera() {
+                            Webcam.attach('#my_camera');
+                        }
+
+                        function stopCamera() {
+                            Webcam.reset('#my_camera');
+                        }
+                    </script>
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <label for="hue">Hue</label>
+                                <input id="hue" name="hue" type="range" min="0" max="300" value="0">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <label for="contrast">Contrast</label>
+                                <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <label for="vibrance">Vibrance</label>
+                                <input id="vibrance" name="vibrance" type="range" min="0" max="400" value="0">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <label for="sepia">Sepia</label>
+                                <input id="sepia" name="sepia" type="range" min="0" max="300" value="0">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="resetbtn" class="btn btn-success btn-block">Reset Photo</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="brightnessbtn" class="btn btn-primary btn-block">Brightness</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="noisebtn" class="btn btn-primary btn-block">Noise</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="sepiabtn" class="btn btn-primary btn-block">Sepia</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="contrastbtn" class="btn btn-primary btn-block">Contrast</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="colorbtn" class="btn btn-primary btn-block">Colorize</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="vintagebtn" class="btn btn-primary btn-block">Vintage</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="lomobtn" class="btn btn-primary btn-block">Lomo</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="tiltshiftbtn" class="btn btn-primary btn-block">Tilt Shift</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="radialblurbtn" class="btn btn-primary btn-block">Radial Blur</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="edgeenhancebtn" class="btn btn-primary btn-block">Edge Enhance</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="embossbtn" class="btn btn-primary btn-block">Emboss</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="posterizebtn" class="btn btn-primary btn-block">Posterize</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="claritybtn" class="btn btn-primary btn-block">Clarity</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="orangepeelbtn" class="btn btn-primary btn-block">Orange Peel</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="sincitybtn" class="btn btn-primary btn-block">Sin City</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="sunrisebtn" class="btn btn-primary btn-block">Sun Rise</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="crossprocessbtn" class="btn btn-primary btn-block">Cross Process</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="hazydaysbtn" class="btn btn-primary btn-block">Hazy</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="lovebtn" class="btn btn-primary btn-block">Love</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="grungybtn" class="btn btn-primary btn-block">Grungy</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="jarquesbtn" class="btn btn-primary btn-block">Jarques</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="pinholebtn" class="btn btn-primary btn-block">Pin Hole</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="oldbootbtn" class="btn btn-primary btn-block">Old Boot</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="glowingsunbtn" class="btn btn-primary btn-block">Glow Sun</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="hdrbtn" class="btn btn-warning btn-block">HDR Effect</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="oldpaperbtn" class="btn btn-warning btn-block">Old Paper</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="pleasantbtn" class="btn btn-warning btn-block">Pleasant</button>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-2">
+                                <button id="savebtn" class="btn btn-success btn-block">Save Image</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-lg-6">
+                            <label for="hue">Hue</label>
+                            <input id="hue" name="hue" type="range" min="0" max="300" value="0">
+                            <label for="contrast">Contrast</label>
+                            <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="vibrance">Vibrance</label>
+                            <input id="vibrance" name="vibrance" type="range" min="0" max="400" value="0">
+                            <label for="sepia">Sepia</label>
+                            <input id="sepia" name="sepia" type="range" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="resetbtn" class="btn btn-success">Reset Photo</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="brightnessbtn" class="btn btn-primary">Brightness</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="noisebtn" class="btn btn-primary">Noise</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="sepiabtn" class="btn btn-primary">Sepia</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="contrastbtn" class="btn btn-primary">Contrast</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="colorbtn" class="btn btn-primary">Colorize</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="vintagebtn" class="btn btn-primary">Vintage</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="lomobtn" class="btn btn-primary">Lomo</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="tiltshiftbtn" class="btn btn-primary">Tilt Shift</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="radialblurbtn" class="btn btn-primary">Radial Blur</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="edgeenhancebtn" class="btn btn-primary">Edge Enhance</button>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <button id="embossbtn" class="btn btn-primary">Emboss</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="posterizebtn" class="btn btn-primary">Posterize</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="claritybtn" class="btn btn-primary">Clarity</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="orangepeelbtn" class="btn btn-primary">Orange Peel</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="sincitybtn" class="btn btn-primary">Sin City</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="sunrisebtn" class="btn btn-primary">Sun Rise</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="crossprocessbtn" class="btn btn-primary">Cross Process</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="hazydaysbtn" class="btn btn-primary">Hazy</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="lovebtn" class="btn btn-primary">Love</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="grungybtn" class="btn btn-primary">Grungy</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="jarquesbtn" class="btn btn-primary">Jarques</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="pinholebtn" class="btn btn-primary">Pin Hole</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="oldbootbtn" class="btn btn-primary">Old Boot</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="glowingsunbtn" class="btn btn-primary">Glow Sun</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="hdrbtn" class="btn btn-warning">HDR Effect</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="oldpaperbtn" class="btn btn-warning">Old Paper</button>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="pleasantbtn" class="btn btn-warning">Pleasant</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            <button id="savebtn" class="btn btn-success">Save Image</button>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--     <script src="lib/font_definitions.js"></script> -->
+    <script>
+        var kitchensink = {};
+        var canvas = new fabric.Canvas('canvas');
+    </script>
+    <script src="js/kitchensink/utils.js"></script>
+    <script src="js/kitchensink/app_config.js"></script>
+    <script src="js/kitchensink/controller.js"></script>
+    <script>
+        var loadFile = function(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('output');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+
+            var canvasphoto = document.getElementById('canvasid'),
+                context = canvasphoto.getContext('2d');
+            context.clearRect(0, 0, canvasphoto.width, canvasphoto.height);
+
+
+
+            base_image = new Image();
+            base_image.src = data_uri;
+            base_image.onload = function() {
+                context.drawImage(base_image, 1, 1);
+
+            }
+        };
+    </script>
+    <script type="text/javascript">
+        function IsTouchSupported() {
+            if (Modernizr.touchevents) {
+                console.log(" I am mobile");
+                document.getElementById('forDesktop').style.display = 'none';
+                document.getElementById('formobile').style.display = 'block';
+            } else {
+                console.log(" I am Desktop");
+                document.getElementById('forDesktop').style.display = 'block';
+                document.getElementById('formobile').style.display = 'none';
+            }
+        }
+    </script>
+    <script>
+        (function() {
+
+            if (document.location.hash !== '#zoom') return;
+
+            function renderVieportBorders() {
+                var ctx = canvas.getContext();
+
+                ctx.save();
+
+                ctx.fillStyle = 'rgba(0,0,0,0.1)';
+
+                ctx.fillRect(
+                    canvas.viewportTransform[4],
+                    canvas.viewportTransform[5],
+                    canvas.getWidth() * canvas.getZoom(),
+                    canvas.getHeight() * canvas.getZoom());
+
+                ctx.setLineDash([5, 5]);
+
+                ctx.strokeRect(
+                    canvas.viewportTransform[4],
+                    canvas.viewportTransform[5],
+                    canvas.getWidth() * canvas.getZoom(),
+                    canvas.getHeight() * canvas.getZoom());
+
+                ctx.restore();
+            }
+
+            $(canvas.getElement().parentNode).on('mousewheel', function(e) {
+
+                var newZoom = canvas.getZoom() + e.deltaY / 300;
+                canvas.zoomToPoint({
+                    x: e.offsetX,
+                    y: e.offsetY
+                }, newZoom);
+
+                renderVieportBorders();
+
+                return false;
+            });
+
+            var viewportLeft = 0,
+                viewportTop = 0,
+                mouseLeft,
+                mouseTop,
+                _drawSelection = canvas._drawSelection,
+                isDown = false;
+
+            canvas.on('mouse:down', function(options) {
+                isDown = true;
+
+                viewportLeft = canvas.viewportTransform[4];
+                viewportTop = canvas.viewportTransform[5];
+
+                mouseLeft = options.e.x;
+                mouseTop = options.e.y;
+
+                if (options.e.altKey) {
+                    _drawSelection = canvas._drawSelection;
+                    canvas._drawSelection = function() {};
+                }
+
+                renderVieportBorders();
+            });
+
+            canvas.on('mouse:move', function(options) {
+                if (options.e.altKey && isDown) {
+                    var currentMouseLeft = options.e.x;
+                    var currentMouseTop = options.e.y;
+
+                    var deltaLeft = currentMouseLeft - mouseLeft,
+                        deltaTop = currentMouseTop - mouseTop;
+
+                    canvas.viewportTransform[4] = viewportLeft + deltaLeft;
+                    canvas.viewportTransform[5] = viewportTop + deltaTop;
+
+                    canvas.renderAll();
+                    renderVieportBorders();
+                }
+            });
+
+            canvas.on('mouse:up', function() {
+                canvas._drawSelection = _drawSelection;
+                isDown = false;
+            });
+        })();
+    </script>
+    <script>
+        (function() {
+            fabric.util.addListener(fabric.window, 'load', function() {
+                var canvas = this.__canvas || this.canvas,
+                    canvases = this.__canvases || this.canvases;
+
+                canvas && canvas.calcOffset && canvas.calcOffset();
+
+                if (canvases && canvases.length) {
+                    for (var i = 0, len = canvases.length; i < len; i++) {
+                        canvases[i].calcOffset();
+                    }
+                }
+            });
+        })();
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        $(".upper-canvas").click(function(options) {
+            //var getsource = $(this).attr("src");
+            //setupCamera()
+            var pointer = canvas.getPointer(event.e);
+            var posX = pointer.x;
+            var posY = pointer.y;
+            console.log(posX + ", " + posY);
+            if (posX < 409 && posY > 231) {
+                setupCamera()
+            }
+            //alert(options.e.layerX, options.e.layerY);
+        });
+
+        //Filters.....................................
+        function showFilters() {
+            $(".filters").show();
+        }
+
+        function hideFilters() {
+            $(".filters").hide();
+        }
+
+        var filters = [
+            new fabric.Image.filters.Grayscale(), // grayscale    0
+            new fabric.Image.filters.Sepia2(), // sepia        1
+            new fabric.Image.filters.Invert(), // invert       2
+
+            new fabric.Image.filters.Convolute({ // emboss       3
+                matrix: [1, 1, 1,
+                    1, 0.7, -1, -1, -1, -1
+                ]
+            }),
+
+            new fabric.Image.filters.Convolute({ // sharpen      4
+                matrix: [0, -1, 0, -1, 5, -1,
+                    0, -1, 0
+                ]
+            })
+        ];
+
+        $(function() {
+            $('.filters').on("change", "input", function() {
+                var isChecked = $(this).prop("checked"),
+                    filter = $(this).data("filter"),
+                    obj = canvas.getActiveObject();
+
+                obj.filters[filter] = isChecked ? filters[filter] : null;
+                obj.applyFilters(function() {
+                    canvas.renderAll();
+                });
+            });
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js'></script>
+    <script src="js/camanfilter.js"></script>
+</body>
+
+</html>
+<!--[if IE]><script src="../lib/fonts/Delicious.font.js"></script><![endif]-->

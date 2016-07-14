@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.32.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="well">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <label for="hue">Hue</label>
+                <input id="hue" name="hue" type="range" min="0" max="300" value="0">
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <label for="contrast">Contrast</label>
+                <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0">
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <label for="vibrance">Vibrance</label>
+                <input id="vibrance" name="vibrance" type="range" min="0" max="400" value="0">
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <label for="sepia">Sepia</label>
+                <input id="sepia" name="sepia" type="range" min="0" max="300" value="0">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="resetbtn" class="btn btn-success btn-block">Reset Photo</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="brightnessbtn" class="btn btn-primary btn-block">Brightness</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="noisebtn" class="btn btn-primary btn-block">Noise</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="sepiabtn" class="btn btn-primary btn-block">Sepia</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="contrastbtn" class="btn btn-primary btn-block">Contrast</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="colorbtn" class="btn btn-primary btn-block">Colorize</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="vintagebtn" class="btn btn-primary btn-block">Vintage</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="lomobtn" class="btn btn-primary btn-block">Lomo</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="tiltshiftbtn" class="btn btn-primary btn-block">Tilt Shift</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="radialblurbtn" class="btn btn-primary btn-block">Radial Blur</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="edgeenhancebtn" class="btn btn-primary btn-block">Edge Enhance</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="embossbtn" class="btn btn-primary btn-block">Emboss</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="posterizebtn" class="btn btn-primary btn-block">Posterize</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="claritybtn" class="btn btn-primary btn-block">Clarity</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="orangepeelbtn" class="btn btn-primary btn-block">Orange Peel</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="sincitybtn" class="btn btn-primary btn-block">Sin City</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="sunrisebtn" class="btn btn-primary btn-block">Sun Rise</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="crossprocessbtn" class="btn btn-primary btn-block">Cross Process</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="hazydaysbtn" class="btn btn-primary btn-block">Hazy</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="lovebtn" class="btn btn-primary btn-block">Love</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="grungybtn" class="btn btn-primary btn-block">Grungy</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="jarquesbtn" class="btn btn-primary btn-block">Jarques</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="pinholebtn" class="btn btn-primary btn-block">Pin Hole</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="oldbootbtn" class="btn btn-primary btn-block">Old Boot</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="glowingsunbtn" class="btn btn-primary btn-block">Glow Sun</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="hdrbtn" class="btn btn-warning btn-block">HDR Effect</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="oldpaperbtn" class="btn btn-warning btn-block">Old Paper</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="pleasantbtn" class="btn btn-warning btn-block">Pleasant</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <button id="savebtn" class="btn btn-success btn-block">Save Image</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

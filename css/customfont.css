@@ -1,0 +1,145 @@
+@font-face {
+    font-family: GochiHand-Regular;
+    src: url(../assets/fonts/GochiHand-Regular.ttf);
+}
+
+@font-face {
+    font-family: Alike-Regular;
+    src: url(../assets/fonts/Alike-Regular.ttf);
+}
+
+
+@font-face {
+    font-family: Allura-Regular;
+    src: url(../assets/fonts/Allura-Regular.ttf);
+}
+
+@font-face {
+    font-family: ConcertOne-Regular;
+    src: url(../assets/fonts/ConcertOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: Corben-Regular;
+    src: url(../assets/fonts/Corben-Regular.ttf);
+}
+
+@font-face {
+    font-family: DancingScript-Regular;
+    src: url(../assets/fonts/DancingScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: EricSansA;
+    src: url(../assets/fonts/EricSansA.ttf);
+}
+
+@font-face {
+    font-family: Gorditas-Regular;
+    src: url(../assets/fonts/Gorditas-Regular.ttf);
+}
+
+@font-face {
+    font-family: Graduate-Regular;
+    src: url(../assets/fonts/Graduate-Regular.ttf);
+}
+
+@font-face {
+    font-family: JosefinSlab-Bold;
+    src: url(../assets/fonts/JosefinSlab-Bold.ttf);
+}
+
+@font-face {
+    font-family: JustMeAgainDownHere;
+    src: url(../assets/fonts/JustMeAgainDownHere.ttf);
+}
+
+@font-face {
+    font-family: KGTenThousandReasons;
+    src: url(../assets/fonts/KGTenThousandReasons.ttf);
+}
+
+@font-face {
+    font-family: Lobster;
+    src: url(../assets/fonts/Lobster.ttf);
+}
+
+@font-face {
+    font-family: Lusitana-Regular;
+    src: url(../assets/fonts/Lusitana-Regular.ttf);
+}
+
+@font-face {
+    font-family: Monofett;
+    src: url(../assets/fonts/Monofett.ttf);
+}
+
+@font-face {
+    font-family: PatrickHand-Regular;
+    src: url(../assets/fonts/PatrickHand-Regular.ttf);
+}
+
+@font-face {
+    font-family: PermanentMarker;
+    src: url(../assets/fonts/PermanentMarker.ttf);
+}
+
+@font-face {
+    font-family: PlayfairDisplaySC-Regular;
+    src: url(../assets/fonts/PlayfairDisplaySC-Regular.ttf);
+}
+
+@font-face {
+    font-family: Pompiere-Regular;
+    src: url(../assets/fonts/Pompiere-Regular.ttf);
+}
+
+@font-face {
+    font-family: Sniglet-Regular;
+    src: url(../assets/fonts/Sniglet-Regular.ttf);
+}
+
+/*@font-face {
+    font-family: SourceSansPro-Regular;
+    src: url(../assets/fonts/SourceSansPro-Regular.ttf);
+}*/
+
+@font-face {
+    font-family: SpecialElite;
+    src: url(../assets/fonts/SpecialElite.ttf);
+}
+
+@font-face {
+    font-family: SueEllenFrancisco;
+    src: url(../assets/fonts/SueEllenFrancisco.ttf);
+}
+
+@font-face {
+    font-family: TextMeOne-Regular;
+    src: url(../assets/fonts/TextMeOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: VastShadow-Regular;
+    src: url(../assets/fonts/VastShadow-Regular.ttf);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#font_GochiHandRegular {
+    font-family: GochiHand-Regular;
+}
+
+
+#font_Alike-Regular {
+    font-family: Alike-Regular;
+}

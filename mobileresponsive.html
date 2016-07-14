@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kitchensink">
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/paster.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="lib/prism.js"></script>
+    <script>
+    (function() {
+        var fabricUrl = 'lib/fabric.js';
+        if (document.location.search.indexOf('load_fabric_from=') > -1) {
+            var match = document.location.search.match(/load_fabric_from=([^&]*)/);
+            if (match && match[1]) {
+                fabricUrl = match[1];
+            }
+        }
+        document.write('<script src="' + fabricUrl + '"><\/script>');
+    })();
+    </script>
+    <script src="js/master.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="js/webcam.js"></script>
+    <style>
+    .canvasclass {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #main {
+        display: block;
+        width: 80%;
+        padding: 50px 10%;
+        height: 300px;
+    }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kitchensink.css">
+    <link rel="stylesheet" href="css/material_design_colors_full.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/customfont.css">
+    <link href='https://fonts.googleapis.com/css?family=Plaster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div id="divCheckbox">
+        <!-- Div just to load the custom font for the canvas, this is there to make sure that fonts have loaded. 
+            http://stackoverflow.com/a/2756611
+            Description :
+            Drawing on canvas has to happen and return immediately when you call the fillText method. However, the browser has not yet loaded the font from the network, which is a background task. So it has to fall back to the font it does have available.
+    -->
+        <p>
+            <font style="font-family: GochiHand-Regular;" color="white">hidden</font>
+            <font style="font-family: Alike-Regular;" color="white">hidden</font>
+            <font style="font-family: Allura-Regular;" color="white">hidden</font>
+            <font style="font-family: ConcertOne-Regular;" color="white">hidden</font>
+            <font style="font-family: Corben-Regular;" color="white">hidden</font>
+            <font style="font-family: DancingScript;" color="white">hidden</font>
+            <font style="font-family: EricSansA;" color="white">hidden</font>
+            <font style="font-family: Gorditas-Regular;" color="white">hidden</font>
+            <font style="font-family: Graduate-Regular;" color="white">hidden</font>
+            <font style="font-family: JosefinSlab-Bold;" color="white">hidden</font>
+            <font style="font-family: JustMeAgainDownHere;" color="white">hidden</font>
+            <font style="font-family: KGTenThousandReasons;" color="white">hidden</font>
+            <font style="font-family: Lobster;" color="white">hidden</font>
+            <font style="font-family: Lusitana-Regular;" color="white">hidden</font>
+            <font style="font-family: Monofett;" color="white">hidden</font>
+            <font style="font-family: PatrickHand-Regular;" color="white">hidden</font>
+            <font style="font-family: PermanentMarker;" color="white">hidden</font>
+            <font style="font-family: PlayfairDisplaySC-Regular;" color="white">hidden</font>
+            <font style="font-family: Pompiere-Regular;" color="white">hidden</font>
+            <font style="font-family: Sniglet-Regular;" color="white">hidden</font>
+            <font style="font-family: SourceSansPro-Regular;" color="white">hidden</font>
+            <font style="font-family: SpecialElite;" color="white">hidden</font>
+            <font style="font-family: SueEllenFrancisco;" color="white">hidden</font>
+            <font style="font-family: TextMeOne-Regular;" color="white">hidden</font>
+            <font style="font-family: VastShadow-Regular;" color="white">hidden</font>
+        </p>
+    </div>
+    <div id="bd-wrapper" ng-controller="CanvasControls">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/800x500" alt="">
+                        <div class="caption">
+                            <h3>Feature Label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p>
+                                <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/800x500" alt="">
+                        <div class="caption">
+                            <h3>Feature Label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p>
+                                <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/800x500" alt="">
+                        <div class="caption">
+                            <h3>Feature Label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p>
+                                <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/800x500" alt="">
+                        <div class="caption">
+                            <h3>Feature Label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p>
+                                <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main">
+                <canvas id="respondCanvas" width="100" height="100" class="canvasclass">
+                    <!-- Provide fallback -->
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        //Get the canvas & context
+        var c = $('#respondCanvas');
+        var ct = c.get(0).getContext('2d');
+        var container = $(c).parent();
+
+        //Run function when browser  resize
+        $(window).resize(respondCanvas);
+
+        function respondCanvas() {
+            c.attr('width', $(container).width()); //max width
+            c.attr('height', $(container).height()); //max height
+
+            //Redraw & reposition content
+            var x = c.width();
+            var y = c.height();
+            ct.font = "20px Calibri";
+
+            ct.fillStyle = "#DDDDDD"; //black
+            ct.fillRect(0, 0, x, y); //fill the canvas
+
+            var resizeText = "Canvas width: " + c.width() + "px";
+            ct.textAlign = "center";
+            ct.fillStyle = "#333333"; //white
+            ct.fillText(resizeText, (x / 2), (y / 2));
+        }
+
+        //Initial call
+        respondCanvas();
+    });
+    </script>
+</body>
+
+</html>
