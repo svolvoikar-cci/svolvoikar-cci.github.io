@@ -10,7 +10,7 @@
 </head>
 
 <body onload="IsTouchSupported()">
-    <div id="forDesktop">
+    <!--<div id="forDesktop">
         <div class="container">
             <div class="row text-center">
                 <video id="video" width="250" height="250" autoplay></video>
@@ -25,9 +25,7 @@
     <div id="formobile">
         <div class="container">
             <div class="row text-center">
-                <!-- <input type="file" accept="image/*"> -->
-                <!--                 <input type="file" accept="image/*" onchange="loadFile(event)">
-                <img id="output" width="500" height="100" /> -->
+
             </div>
             <input type="file" accept="image/*" onchange="loadFile(event)">
             <p>This is the img </p>
@@ -35,7 +33,13 @@
             <p>This is the canvas </p>
             <canvas id="canvas2" width="250" height="250"></canvas>
         </div>
-    </div>
+    </div>-->
+	
+	
+	<input type="file" accept="image/*;capture=camera">
+	
+	
+	
 </body>
 <!-- <script>
 var loadFile = function(event) {
