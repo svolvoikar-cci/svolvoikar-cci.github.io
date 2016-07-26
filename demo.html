@@ -33,7 +33,9 @@
 
 <body>
     <div class="col-xs-12">
+        <button type="button" onclick="javascript:invokeCSCode($('#name').val());">Invoke C# Code</button>
         <a class="button" href="#" onclick="makecall('OpenCamera',Array('data here'));"><span>Open Camera</span></a>
+        <p id="result">Result:</p>
     </div>
     <div class="col-xs-12">
         <canvas id="canvas" />
@@ -44,6 +46,21 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function log(str) {
+            $('#result').text($('#result').text() + " " + str);
+        }
+
+        function invokeCSCode(data) {
+            try {
+                log("Sending Data:" + data);
+                invokeCSharpAction(data);
+            } catch (err) {
+                log(err);
+            }
+        }
+    </script>
 </body>
 
 </html>
