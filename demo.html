@@ -36,6 +36,7 @@
         <button type="button" onclick="javascript:invokeCSCode($('#name').val());">Invoke C# Code</button>
         <a class="button" href="#" onclick="makecall('OpenCamera',Array('data here'));"><span>Open Camera</span></a>
         <p id="result">Result:</p>
+        <h1 id='message' style='color:red'></h1>
     </div>
     <div class="col-xs-12">
         <canvas id="canvas" />
@@ -59,6 +60,10 @@
             } catch (err) {
                 log(err);
             }
+        }
+
+        function callback(msg) {
+            document.getElementById('message').innerHTML = msg;
         }
     </script>
 </body>
