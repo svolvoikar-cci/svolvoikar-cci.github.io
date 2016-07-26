@@ -477,127 +477,86 @@
                         </div>
                     </div>
                     <!--/row-->
-                    <div class="col-md-12 text-center">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <div class="mini-box">
-                                    <button class="btn" ng-click="addText()">Add text</button>
-                                    <button type="button" class="btn image1" ng-click="addImageFromCanvas()">Add clicked image</button>
+                    <div class="well">
+                        <div class="col-md-12 text-center">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="mini-box">
+                                        <button class="btn" ng-click="addText()">Add text</button>
+                                        <button type="button" class="btn image1" ng-click="addImageFromCanvas()">Add clicked image</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="mini-box">
-                                    <button class="btn btn-success" id="rasterize" ng-click="rasterize()">
+                                <div class="col-xs-6">
+                                    <div class="mini-box">
+                                        <button class="btn btn-success" id="rasterize" ng-click="rasterize()">
                                         Export to Image
                                     </button>
+                                    </div>
                                 </div>
                             </div>
-                            <!--                         <div class="col-xs-6">
-                            <div class="mini-box">
-
-                                <textarea id="json-console" bind-value-to="consoleJSON" style="display:none;"> </textarea>
-                                <button type="button" class="btn btn-info" ng-click="loadJSON()">
-                                    Load
-                                </button>
-                                <button type="button" class="btn btn-info" ng-click="saveJSON()">
-                                    Save
-                                </button>
-                            </div>
-                        </div> -->
                         </div>
-                    </div>
-                    </br>
-                    <div class="col-md-12 text-center" id="forDesktop" style="display: none">
-                        <button class="btn fa fa-play" id="imageClick" onclick="setupCamera()">
+                        <hr>
+                        <div class="col-md-12 text-center" id="forDesktop" style="display: none">
+                            <button class="btn fa fa-play" id="imageClick" onclick="setupCamera()">
                             Start Camera
                         </button>
-                        <button class="btn fa fa-camera" id="imageClick" onclick="take_snapshot()">
+                            <button class="btn fa fa-camera" id="imageClick" onclick="take_snapshot()">
                             Click photo
                         </button>
-                        <button class="btn fa fa-stop" id="imageClick" onclick="stopCamera()">
+                            <button class="btn fa fa-stop" id="imageClick" onclick="stopCamera()">
                             Stop Camera
                         </button>
-                    </div>
-                    <div class="col-md-12 text-center" id="formobile" style="display: none">
-                        <input type="file" accept="image/*" onchange="loadFile(event)">
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <div class="row">
-                            <div class="col-xs-6 text-center">
-                                <div class="mini-box">
-                                    <div id="my_camera" style="width:320px; height:240px;"></div>
+                        </div>
+                        <div class="col-md-12 text-center" id="formobile" style="display: none">
+                            <input type="file" accept="image/*" onchange="loadFile(event)">
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <div class="row">
+                                <div class="col-xs-6 text-center">
+                                    <div class="mini-box">
+                                        <div id="my_camera" style="width:320px; height:240px;"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-6 text-center">
-                                <div class="mini-box">
-                                    <canvas id="canvasid" width="320" height="240"></canvas>
+                                <div class="col-xs-6 text-center">
+                                    <div class="mini-box">
+                                        <canvas id="canvasid" width="320" height="240"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <script language="JavaScript">
-                        function take_snapshot() {
-                            Webcam.snap(function(data_uri) {
-                                //document.getElementById('my_result').innerHTML = '<img id="mypic" src="' + data_uri + '"/>';
-
-                                var canvasphoto = document.getElementById('canvasid'),
-                                    context = canvasphoto.getContext('2d');
-                                context.clearRect(0, 0, canvasphoto.width, canvasphoto.height);
-                                make_base();
-
-                                function make_base() {
-                                    base_image = new Image();
-                                    base_image.src = data_uri;
-                                    base_image.onload = function() {
-                                        context.drawImage(base_image, 1, 1);
-                                    }
-                                }
-
-                            });
-                        }
-
-                        function setupCamera() {
-                            Webcam.attach('#my_camera');
-                        }
-
-                        function stopCamera() {
-                            Webcam.reset('#my_camera');
-                        }
-                    </script>
-                    <div>
                         <div class="row">
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <label for="hue">Hue</label>
                                 <input id="hue" name="hue" type="range" min="0" max="300" value="0">
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <label for="contrast">Contrast</label>
                                 <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0">
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <label for="vibrance">Vibrance</label>
                                 <input id="vibrance" name="vibrance" type="range" min="0" max="400" value="0">
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <label for="sepia">Sepia</label>
                                 <input id="sepia" name="sepia" type="range" min="0" max="300" value="0">
                             </div>
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <button id="resetbtn" class="btn btn-success btn-block">Reset Photo</button>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <button id="brightnessbtn" class="btn btn-primary btn-block">Brightness</button>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <button id="noisebtn" class="btn btn-primary btn-block">Noise</button>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <button id="sepiabtn" class="btn btn-primary btn-block">Sepia</button>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-xs-4">
                                 <button id="contrastbtn" class="btn btn-primary btn-block">Contrast</button>
                             </div>
                             <div class="col-lg-2 col-md-2 col-xs-2">
@@ -674,125 +633,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="row">
-                        <div class="col-lg-6">
-                            <label for="hue">Hue</label>
-                            <input id="hue" name="hue" type="range" min="0" max="300" value="0">
-                            <label for="contrast">Contrast</label>
-                            <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0">
-                        </div>
-                        <div class="col-lg-6">
-                            <label for="vibrance">Vibrance</label>
-                            <input id="vibrance" name="vibrance" type="range" min="0" max="400" value="0">
-                            <label for="sepia">Sepia</label>
-                            <input id="sepia" name="sepia" type="range" min="0" max="100" value="0">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="resetbtn" class="btn btn-success">Reset Photo</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="brightnessbtn" class="btn btn-primary">Brightness</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="noisebtn" class="btn btn-primary">Noise</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="sepiabtn" class="btn btn-primary">Sepia</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="contrastbtn" class="btn btn-primary">Contrast</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="colorbtn" class="btn btn-primary">Colorize</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="vintagebtn" class="btn btn-primary">Vintage</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="lomobtn" class="btn btn-primary">Lomo</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="tiltshiftbtn" class="btn btn-primary">Tilt Shift</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="radialblurbtn" class="btn btn-primary">Radial Blur</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="edgeenhancebtn" class="btn btn-primary">Edge Enhance</button>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                <button id="embossbtn" class="btn btn-primary">Emboss</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="posterizebtn" class="btn btn-primary">Posterize</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="claritybtn" class="btn btn-primary">Clarity</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="orangepeelbtn" class="btn btn-primary">Orange Peel</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="sincitybtn" class="btn btn-primary">Sin City</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="sunrisebtn" class="btn btn-primary">Sun Rise</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="crossprocessbtn" class="btn btn-primary">Cross Process</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="hazydaysbtn" class="btn btn-primary">Hazy</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="lovebtn" class="btn btn-primary">Love</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="grungybtn" class="btn btn-primary">Grungy</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="jarquesbtn" class="btn btn-primary">Jarques</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="pinholebtn" class="btn btn-primary">Pin Hole</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="oldbootbtn" class="btn btn-primary">Old Boot</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="glowingsunbtn" class="btn btn-primary">Glow Sun</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="hdrbtn" class="btn btn-warning">HDR Effect</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="oldpaperbtn" class="btn btn-warning">Old Paper</button>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="pleasantbtn" class="btn btn-warning">Pleasant</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                            <button id="savebtn" class="btn btn-success">Save Image</button>
-                        </div>
-                    </div>-->
                 </div>
             </div>
         </div>
@@ -802,6 +642,36 @@
     </div>
     </div>
     <!--     <script src="lib/font_definitions.js"></script> -->
+
+    <script language="JavaScript">
+        function take_snapshot() {
+            Webcam.snap(function(data_uri) {
+                //document.getElementById('my_result').innerHTML = '<img id="mypic" src="' + data_uri + '"/>';
+
+                var canvasphoto = document.getElementById('canvasid'),
+                    context = canvasphoto.getContext('2d');
+                context.clearRect(0, 0, canvasphoto.width, canvasphoto.height);
+                make_base();
+
+                function make_base() {
+                    base_image = new Image();
+                    base_image.src = data_uri;
+                    base_image.onload = function() {
+                        context.drawImage(base_image, 1, 1);
+                    }
+                }
+
+            });
+        }
+
+        function setupCamera() {
+            Webcam.attach('#my_camera');
+        }
+
+        function stopCamera() {
+            Webcam.reset('#my_camera');
+        }
+    </script>
     <script>
         var kitchensink = {};
         var canvas = new fabric.Canvas('canvas');

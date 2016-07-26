@@ -34,12 +34,12 @@
             <canvas id="canvas2" width="250" height="250"></canvas>
         </div>
     </div>-->
-	
-	
-	<input type="file" accept="image/*;capture=camera">
-	
-	
-	
+
+
+    <input type="file" accept="image/*;capture=camera">
+
+
+
 </body>
 <!-- <script>
 var loadFile = function(event) {
@@ -48,109 +48,109 @@ var loadFile = function(event) {
 };
 </script> -->
 <script>
-var loadFile = function(event) {
+    var loadFile = function(event) {
 
-    var myCanvas = document.getElementById('canvas');
-    var ctx = myCanvas.getContext('2d');
-    var img = new Image;
-    // img.onload = start;
+        var myCanvas = document.getElementById('canvas');
+        var ctx = myCanvas.getContext('2d');
+        var img = new Image;
+        // img.onload = start;
 
-    // function start() {
-    //     ctx.drawImage(img, 0, 0);
-    // }
-
-    var reader = new FileReader();
-    reader.onload = function() {
-        var output = document.getElementById('output');
-        output.src = reader.result;
-        //img.src = reader.result;
-    };
-
-
-
-
-};
-</script>
-<script>
-$(function() {
-    $('#file-input').change(function(e) {
-        var file = e.target.files[0],
-            imageType = /image.*/;
-
-        if (!file.type.match(imageType))
-            return;
+        // function start() {
+        //     ctx.drawImage(img, 0, 0);
+        // }
 
         var reader = new FileReader();
-        reader.onload = fileOnload;
-        reader.readAsDataURL(file);
-    });
-
-    function fileOnload(e) {
-        var $img = $('<img>', {
-            src: e.target.result
-        });
-        $img.load(function() {
-            var canvas = $('#canvas2')[0];
-            var context = canvas.getContext('2d');
-
-            canvas.width = this.naturalWidth;
-            canvas.height = this.naturalHeight;
-            context.drawImage(this, 0, 0);
-        });
-    }
-});
-</script>
-<script type="text/javascript">
-function IsTouchSupported() {
-    if (Modernizr.touchevents) {
-        console.log(" I am supported");
-        document.getElementById('forDesktop').style.display = 'none';
-        document.getElementById('formobile').style.display = 'block';
-    } else {
-        // not-supported
-        console.log(" I am not-supported");
-        document.getElementById('forDesktop').style.display = 'block';
-        document.getElementById('formobile').style.display = 'none';
-    }
-}
-</script>
-<script type="text/javascript">
-// Put event listeners into place
-window.addEventListener("DOMContentLoaded", function() {
-    // Grab elements, create settings, etc.
-    var canvas = document.getElementById("canvas"),
-        context = canvas.getContext("2d"),
-        video = document.getElementById("video"),
-        videoObj = {
-            "video": true
-        },
-        errBack = function(error) {
-            console.log("Video capture error: ", error.code);
+        reader.onload = function() {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+            //img.src = reader.result;
         };
 
-    // Put video listeners into place
-    if (navigator.getUserMedia) { // Standard
-        navigator.getUserMedia(videoObj, function(stream) {
-            video.src = stream;
-            video.play();
-        }, errBack);
-    } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
-        navigator.webkitGetUserMedia(videoObj, function(stream) {
-            video.src = window.webkitURL.createObjectURL(stream);
-            video.play();
-        }, errBack);
-    } else if (navigator.mozGetUserMedia) { // WebKit-prefixed
-        navigator.mozGetUserMedia(videoObj, function(stream) {
-            video.src = window.URL.createObjectURL(stream);
-            video.play();
-        }, errBack);
-    }
 
-    // Trigger photo take
-    document.getElementById("snap").addEventListener("click", function() {
-        context.drawImage(video, 0, 0, 640, 480);
+
+
+    };
+</script>
+<script>
+    $(function() {
+        $('#file-input').change(function(e) {
+            var file = e.target.files[0],
+                imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        });
+
+        function fileOnload(e) {
+            var $img = $('<img>', {
+                src: e.target.result
+            });
+            $img.load(function() {
+                var canvas = $('#canvas2')[0];
+                var context = canvas.getContext('2d');
+
+                canvas.width = this.naturalWidth;
+                canvas.height = this.naturalHeight;
+                context.drawImage(this, 0, 0);
+            });
+        }
     });
-}, false);
+</script>
+<script type="text/javascript">
+    function IsTouchSupported() {
+        if (Modernizr.touchevents) {
+            console.log(" I am supported");
+            document.getElementById('forDesktop').style.display = 'none';
+            document.getElementById('formobile').style.display = 'block';
+        } else {
+            // not-supported
+            console.log(" I am not-supported");
+            document.getElementById('forDesktop').style.display = 'block';
+            document.getElementById('formobile').style.display = 'none';
+        }
+    }
+</script>
+<script type="text/javascript">
+    // Put event listeners into place
+    window.addEventListener("DOMContentLoaded", function() {
+        // Grab elements, create settings, etc.
+        var canvas = document.getElementById("canvas"),
+            context = canvas.getContext("2d"),
+            video = document.getElementById("video"),
+            videoObj = {
+                "video": true
+            },
+            errBack = function(error) {
+                console.log("Video capture error: ", error.code);
+            };
+
+        // Put video listeners into place
+        if (navigator.getUserMedia) { // Standard
+            navigator.getUserMedia(videoObj, function(stream) {
+                video.src = stream;
+                video.play();
+            }, errBack);
+        } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
+            navigator.webkitGetUserMedia(videoObj, function(stream) {
+                video.src = window.webkitURL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        } else if (navigator.mozGetUserMedia) { // WebKit-prefixed
+            navigator.mozGetUserMedia(videoObj, function(stream) {
+                video.src = window.URL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        }
+
+        // Trigger photo take
+        document.getElementById("snap").addEventListener("click", function() {
+            context.drawImage(video, 0, 0, 640, 480);
+        });
+    }, false);
 </script>
 
 </html>
