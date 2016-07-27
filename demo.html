@@ -70,6 +70,14 @@
 
         function callback(msg) {
             document.getElementById('message').innerHTML = msg;
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var img = new Image();
+            img.src = msg;
+
+            img.onload = function() {
+                context.drawImage(this, 0, 0, canvas.width, canvas.height);
+            }
         }
     </script>
 </body>
