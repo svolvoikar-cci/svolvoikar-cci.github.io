@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date picker</title>
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <link href="MonthPicker.min.css" rel="stylesheet" type="text/css" />
+    <script src="MonthPicker.min.js"></script>
+    <script src="examples.js"></script>
+</head>
+
+<body>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+            <br />Choose a Month:
+            <input id="IconDemo" class='Default' type="text" />
+    </div>
+    <button type="button" onclick="getYearAndMont()">Get Year</button>
+    <button type="button" onclick="alert($('#IconDemo').MonthPicker('GetSelectedMonth'));">Get Month</button>
+    <button type="button" onclick="alert($('#IconDemo').MonthPicker('GetSelectedYear'));">Get Month and Year</button>
+</body>
+<script type="text/javascript">
+function getYearAndMont() {
+    var MonthValue =  $('#IconDemo').MonthPicker('GetSelectedMonth');
+    var YearValue =  $('#IconDemo').MonthPicker('GetSelectedYear');
+    console.log("Month : " + MonthValue + " Year : " + YearValue);
+
+}
+</script>
+
+</html>
