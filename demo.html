@@ -40,7 +40,7 @@
 <body>
     <div class="col-xs-12">
         <button type="button" onclick="javascript:invokeCSCode($('#name').val());">Invoke C# Code</button>
-        <a class="button" href="#" onclick="makecall('OpenCamera',Array('data here'));"><span>Open Camera</span></a>
+        <a class="button" href="#" onclick="makecall('OpenCamera','');"><span>Open Camera</span></a>
         <p id="result">Result:</p>
         <h5 id='message' style='color:red'></h5>
     </div>
@@ -66,6 +66,11 @@
             } catch (err) {
                 log(err);
             }
+        }
+
+
+        function url(msg) {
+            document.getElementById('message').innerHTML = msg;
         }
 
         function callback(msg) {
