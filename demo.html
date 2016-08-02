@@ -18,8 +18,8 @@
         }
         
         #canvas {
-            width: 300px;
-            height: 400px;
+            width: 500px;
+            height: 500px;
             border: 1px solid black;
         }
         
@@ -68,11 +68,6 @@
             }
         }
 
-
-        function url(msg) {
-            document.getElementById('message').innerHTML = msg;
-        }
-
         function callback(msg) {
             //document.getElementById('message').innerHTML = msg;
             var canvas = document.getElementById('canvas');
@@ -81,8 +76,8 @@
             img.src = msg;
 
             img.onload = function() {
-                //context.drawImage(this, 0, 0, canvas.width, canvas.height);
-                drawImageProp(context, this, 0, 0, canvas.width, canvas.height, 0.1, 0.5);
+                context.drawImage(this, 0, 0, canvas.width, canvas.height);
+                //drawImageProp(context, this, 0, 0, canvas.width, canvas.height, 0.1, 0.5);
             }
         }
 
