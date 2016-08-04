@@ -42,6 +42,7 @@
         <a class="button" href="#" onclick="makecall('StartRecording','');"><span>Start</span></a>
         <a class="button" href="#" onclick="makecall('StopRecording','');"><span>Stop</span></a>
         <a class="button" href="#" onclick="makecall('PlayRecording','');"><span>Play</span></a>
+        <a class="button" href="#" onclick="makecall('UploadRecording','');"><span>Upload</span></a>
     </div>
     <div class="col-xs-12">
         <audio id="audio" controls>
@@ -49,6 +50,7 @@
               Your browser does not support the audio element.
         </audio>
     </div>
+    <br><br><br><br>
     <div class="col-xs-12">
         <!--<button type="button" onclick="javascript:invokeCSCode($('#name').val());">Invoke C# Code</button>-->
         <a class="button" href="#" onclick="makecall('OpenCamera','');"><span>Camera</span></a>
@@ -139,14 +141,14 @@
             ctx.drawImage(img, cx, cy, cw, ch, x, y, w, h);
         }
 
-        function audio(path) {
-            document.getElementById('message').innerHTML = path;
-            var audio = document.getElementById('audio');
-            var source = document.getElementById('sourceMp3');
-            source.src = path;
+        function audio(file) {
+            document.getElementById('message').innerHTML = file;
+            // var audio = document.getElementById('audio');
+            // var source = document.getElementById('sourceMp3');
+            // source.src = path;
 
-            audio.load(); //call this to just preload the audio without playing
-            audio.play(); //call this to play the song right away
+            // audio.load(); //call this to just preload the audio without playing
+            // audio.play(); //call this to play the song right away
         }
     </script>
 </body>
