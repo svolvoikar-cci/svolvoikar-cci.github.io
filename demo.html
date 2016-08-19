@@ -49,7 +49,6 @@
     <br><br><br><br>
     <div class="col-xs-12">
         Audio Recording
-        <h5 id='token' style='color:red'></h5>
     </div>
     <div class="col-xs-12">
         <a class="button" href="#" onclick="makecall('StartRecording','');"><span>Start</span></a>
@@ -161,7 +160,7 @@
         }
 
         function audio(file) {
-            document.getElementById('message').innerHTML = "1 " + file;
+            document.getElementById('message').innerHTML = file;
             // var audio = document.getElementById('audio');
             // var source = document.getElementById('sourceMp3');
             // source.src = path;
@@ -170,7 +169,9 @@
             // audio.play(); //call this to play the song right away
             localStorage['token'] = file;  
         }
+    </script>
 
+    <script type="text/javascript">
         function saveXamarinToken(token) {    
             localStorage['token'] = token;  
             document.getElementById('message').innerHTML = token;
@@ -178,7 +179,7 @@
 
         function getXamarinToken() {    
             var token = localStorage.getItem("token);
-                document.getElementById('message').innerHTML = "2 " + token;
+                alert("2: " + token);
             }
     </script>
 </body>
