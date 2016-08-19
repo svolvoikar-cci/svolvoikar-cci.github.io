@@ -161,7 +161,7 @@
         }
 
         function audio(file) {
-            document.getElementById('message').innerHTML = file;
+            document.getElementById('message').innerHTML = "1 " + file;
             // var audio = document.getElementById('audio');
             // var source = document.getElementById('sourceMp3');
             // source.src = path;
@@ -178,7 +178,7 @@
 
         function getXamarinToken() {    
             var token = localStorage.getItem("token);
-                document.getElementById('token').innerHTML = token;
+                document.getElementById('message').innerHTML = "2 " + token;
             }
     </script>
 </body>
