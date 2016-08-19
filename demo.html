@@ -162,8 +162,8 @@
 
         function audio(token) {
             alert(token);
-            //localStorage.setItem("token", token);
-            localStorage["token"] = token;
+            localStorage.setItem("token", token);
+            //localStorage["token"] = token;
             var test = localStorage.getItem("token");
             alert(localStorage.getItem("token"));
             document.getElementById('message').innerHTML = test;
