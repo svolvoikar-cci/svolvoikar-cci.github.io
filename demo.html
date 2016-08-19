@@ -72,6 +72,7 @@
         <a class="button" href="#" onclick="makecall('OpenCamera','');"><span>Camera</span></a>
         <a class="button" href="#" onclick="makecall('UploadImage','');"><span>Upload</span></a>
         <!--<p id="result">Result:</p>-->
+        <a class="button" href="#" onclick="audio('test');"><span>save</span></a>
         <h5 id='message' style='color:red'></h5>
     </div>
     <br>
@@ -159,18 +160,10 @@
             ctx.drawImage(img, cx, cy, cw, ch, x, y, w, h);
         }
 
-        function audio(file) {
-            // document.getElementById('message').innerHTML = file;
-            // var audio = document.getElementById('audio');
-            // var source = document.getElementById('sourceMp3');
-            // source.src = path;
-
-            // audio.load(); //call this to just preload the audio without playing
-            // audio.play(); //call this to play the song right away
-            localStorage['token'] = file;  
-
-            var token = localStorage.getItem("token");
-            document.getElementById('message').innerHTML = token;
+        function audio(token) {
+            alert(token);
+            localStorage.setItem("token", token);
+            alert(localStorage.getItem("token"));
         }
     </script>
 </body>
