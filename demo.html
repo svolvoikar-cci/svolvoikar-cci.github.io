@@ -73,6 +73,7 @@
         <a class="button" href="#" onclick="makecall('UploadImage','');"><span>Upload</span></a>
         <!--<p id="result">Result:</p>-->
         <h5 id='message' style='color:red'></h5>
+        <h5 id='token' style='color:red'></h5>
     </div>
     <br>
     <div class="col-xs-12">
@@ -167,18 +168,17 @@
 
             // audio.load(); //call this to just preload the audio without playing
             // audio.play(); //call this to play the song right away
+            localStorage['token'] = file;  
         }
-    </script>
 
-    <script type="text/javascript">
         function saveXamarinToken(token) {    
             localStorage['token'] = token;  
-            document.getElementById('message').innerHTML = token;
+            document.getElementById('token').innerHTML = token;
         }
 
         function getXamarinToken() {    
             var token = localStorage.getItem("token);
-                alert("2: " + token);
+                document.getElementById('message').innerHTML = token;
             }
     </script>
 </body>
