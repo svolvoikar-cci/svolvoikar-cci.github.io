@@ -169,6 +169,19 @@
             // audio.play(); //call this to play the song right away
         }
     </script>
+
+    <script type="text/javascript">
+        function saveXamarinToken(token) {    
+            alert("1: " + "token");
+            localStorage['token'] = token;  
+            document.getElementById('message').innerHTML = token;
+        }
+
+        function getXamarinToken() {    
+            var token = localStorage.getItem("token);
+                alert("2: " + token);
+            }
+    </script>
 </body>
 
 </html>
