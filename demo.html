@@ -49,6 +49,7 @@
     <br><br><br><br>
     <div class="col-xs-12">
         Audio Recording
+        <h5 id='token' style='color:red'></h5>
     </div>
     <div class="col-xs-12">
         <a class="button" href="#" onclick="makecall('StartRecording','');"><span>Start</span></a>
@@ -73,7 +74,6 @@
         <a class="button" href="#" onclick="makecall('UploadImage','');"><span>Upload</span></a>
         <!--<p id="result">Result:</p>-->
         <h5 id='message' style='color:red'></h5>
-        <h5 id='token' style='color:red'></h5>
     </div>
     <br>
     <div class="col-xs-12">
@@ -173,12 +173,12 @@
 
         function saveXamarinToken(token) {    
             localStorage['token'] = token;  
-            document.getElementById('token').innerHTML = token;
+            document.getElementById('message').innerHTML = token;
         }
 
         function getXamarinToken() {    
             var token = localStorage.getItem("token);
-                document.getElementById('message').innerHTML = token;
+                document.getElementById('token').innerHTML = token;
             }
     </script>
 </body>
