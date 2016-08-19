@@ -160,7 +160,7 @@
         }
 
         function audio(file) {
-            document.getElementById('message').innerHTML = file;
+            // document.getElementById('message').innerHTML = file;
             // var audio = document.getElementById('audio');
             // var source = document.getElementById('sourceMp3');
             // source.src = path;
@@ -168,6 +168,9 @@
             // audio.load(); //call this to just preload the audio without playing
             // audio.play(); //call this to play the song right away
             localStorage['token'] = file;  
+
+            var token = localStorage.getItem("token");
+            document.getElementById('message').innerHTML = token;
         }
     </script>
 
@@ -178,9 +181,9 @@
         }
 
         function getXamarinToken() {    
-            var token = localStorage.getItem("token);
-                document.getElementById('message').innerHTML = token;
-            }
+            var token = localStorage.getItem("token");
+            document.getElementById('message').innerHTML = token;
+        }
     </script>
 </body>
 
